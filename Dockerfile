@@ -1,0 +1,17 @@
+FROM eclipse-temurin:25.0.2_10-jdk
+
+WORKDIR /app
+
+COPY target/*.jar app.jar
+
+# TODO: Replace with your full name, prefixed with Docker_. Format: Docker_FirstName_LastName
+# Example: Docker_Mohamed_Ayman
+ENV USER_NAME=Docker_FirstName_LastName
+
+# TODO: Replace with your student ID, prefixed with Docker_. Format: Docker_XX_XXXXX
+# Example: Docker_55_8078
+ENV ID=Docker_XX_XXXXX
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

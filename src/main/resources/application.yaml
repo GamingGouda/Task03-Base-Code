@@ -1,0 +1,24 @@
+# TODO: Replace with your full name. Format: FirstName_LastName_Local
+# Example: Mohamed_Ayman_Local
+USER_NAME: FirstName_LastName_Local
+
+# TODO: Replace with your student ID. Format: XX_XXXXX
+# Example: 55_8078
+ID: XX_XXXXX
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task03db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: dGhpcyBpcyBhIHNlY3JldCBrZXkgZm9yIEpXVCBzaWduaW5n
+  expiration: 3600000
+
+server:
+  port: 8080
