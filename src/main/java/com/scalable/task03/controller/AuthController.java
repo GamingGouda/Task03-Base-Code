@@ -4,6 +4,7 @@ import com.scalable.task03.dto.AuthResponse;
 import com.scalable.task03.dto.LoginRequest;
 import com.scalable.task03.dto.RegisterRequest;
 import com.scalable.task03.service.AuthService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,11 +25,11 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
-        return ResponseEntity.ok(null);
+        return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(request));
     }
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(authService.login(request));
     }
 }
